@@ -48,7 +48,7 @@ class LoginFrame(ttk.Frame):
 
         # Comportamento do protótipo: segue adiante se algum campo estiver vazio
         if user.strip() == "" or pw.strip() == "":
-            self.on_login_ok(user or "anon")
+            messagebox.showwarning("Campos obrigatórios", "Informe usuário e senha para continuar.")
             return
 
         # Autenticação simples via repositório
@@ -101,7 +101,8 @@ class OrdersFrame(ttk.Frame):
         ttk.Button(btns, text="Criar / Atualizar", command=self._save).pack(side="left")
         ttk.Button(btns, text="Remover", command=self._delete).pack(side="left", padx=6)
         ttk.Button(btns, text="Buscar", command=self._search).pack(side="left")
-        ttk.Button(btns, text="Recarregar", command=self._reload).pack(side="left", padx=6)
+        ttk.Button(btns, text="Voltar", command=self._reload).pack(side="left", padx=6)
+
 
         # Tabela para exibir registros
         self.tree = ttk.Treeview(self, columns=("id","cliente","desc","preco","status"), show="headings", height=10)
