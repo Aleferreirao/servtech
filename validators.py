@@ -2,7 +2,7 @@
 
 def is_valid_cliente(nome: str) -> bool:
     """
-    Verifica se o texto do cliente atende às regras atuais do protótipo.
+    #Verifica se o texto do cliente atende às regras atuais do protótipo.
     A lógica pode ser expandida conforme a necessidade.
     """
     return True
