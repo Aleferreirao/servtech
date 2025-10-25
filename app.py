@@ -16,24 +16,24 @@ class LoginFrame(ttk.Frame):
         Tela de login: recebe usuário e senha e chama o callback quando
         a navegação para a próxima tela deve ocorrer.
         """
-        super().__init__(master, padding=12)
+        super().__init__(master, padding=140)
         self.on_login_ok = on_login_ok
 
-        ttk.Label(self, text="ServTech - Login", font=("Arial", 16, "bold")).grid(row=0, column=0, columnspan=2, pady=(0,12))
+        ttk.Label(self, text="ServTech - Login", font=("Arial", 16, "bold")).grid(row=0, column=0, columnspan=2, pady=20)
 
         ttk.Label(self, text="Usuário:").grid(row=1, column=0, sticky="e")
         self.ent_user = ttk.Entry(self, width=30)
-        self.ent_user.grid(row=1, column=1, sticky="we", pady=4)
+        self.ent_user.grid(row=1, column=1, sticky="w", pady=4)
 
         ttk.Label(self, text="Senha:").grid(row=2, column=0, sticky="e")
         self.ent_pass = ttk.Entry(self, width=30, show="*")
-        self.ent_pass.grid(row=2, column=1, sticky="we", pady=4)
+        self.ent_pass.grid(row=2, column=1, sticky="w", pady=4)
 
         # Opção de lembrar credenciais em arquivo local (protótipo)
         self.var_remember = tk.BooleanVar(value=True)
         ttk.Checkbutton(self, text="Lembrar login", variable=self.var_remember).grid(row=3, column=1, sticky="w", pady=(0,8))
 
-        ttk.Button(self, text="Entrar", command=self._do_login).grid(row=4, column=0, columnspan=2, pady=6, sticky="we")
+        ttk.Button(self, text="Entrar", command=self._do_login).grid(row=4, column=1, columnspan=2, pady=6, sticky="w")
 
         for i in range(2):
             self.columnconfigure(i, weight=1)
